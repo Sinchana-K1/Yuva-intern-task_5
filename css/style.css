@@ -1,0 +1,75 @@
+
+:root {
+    --primary-accent: #00ffcc;
+    --secondary-dark: #1f2937;
+    --panel-light: #ffffff;
+}
+
+body {
+    margin: 0;
+    font-family: sans-serif;
+    background: #f3f4f6;
+    color: #374151;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+header {
+    background: var(--secondary-dark);
+    color: white;
+    padding: 20px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+nav {
+    display: flex;
+    gap: 20px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: 600;
+    padding: 6px 12px;
+    cursor: pointer;
+}
+
+nav a:hover,
+nav a.active-route {
+    background: rgba(255, 255, 255, 0.2);
+    color: #00ffcc;
+}
+
+.app-view-port {
+    flex: 1;
+    max-width: 900px;
+    width: 100%;
+    margin: 40px auto;
+    padding: 0 20px;
+}
+
+.view-content-wrapper {
+    background: var(--panel-light);
+    padding: 35px;
+    border-radius: 12px;
+    border-top: 6px solid var(--primary-accent);
+}
+
+.spa-fade-in {
+    animation: viewFadeIn 0.45s cubic-bezier(0.4, 0, 0.2, 1) forwards;
+}
+
+@keyframes viewFadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(12px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
